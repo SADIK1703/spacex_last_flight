@@ -1,0 +1,103 @@
+HTTP/1.1 200 OK
+Access-Control-Allow-Origin: *
+Access-Control-Expose-Headers: spacex-api-cache,spacex-api-response-time
+Cache-Control: max-age=20
+Content-Encoding: gzip
+Content-Security-Policy: default-src 'self';base-uri 'self';block-all-mixed-content;font-src 'self' https: data:;frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests
+Content-Type: application/json; charset=utf-8
+Date: Wed, 19 May 2021 16:37:52 GMT
+Etag: "7f4-v+TFJ98lztvbwW1+EOoRvvkYVOI"
+Expect-Ct: max-age=0
+Referrer-Policy: no-referrer
+Server: Caddy
+Spacex-Api-Cache: HIT
+Spacex-Api-Cache-Online: true
+Spacex-Api-Response-Time: 1ms
+Strict-Transport-Security: max-age=15552000; includeSubDomains
+Vary: Origin, Accept-Encoding
+X-Content-Type-Options: nosniff
+X-Dns-Prefetch-Control: off
+X-Download-Options: noopen
+X-Frame-Options: SAMEORIGIN
+X-Permitted-Cross-Domain-Policies: none
+X-Xss-Protection: 0
+Content-Length: 1067
+Connection: close
+
+{
+  "fairings": {
+    "reused": true,
+    "recovery_attempt": true,
+    "recovered": null,
+    "ships": [
+      "6059166413f40e27e8af34b6"
+    ]
+  },
+  "links": {
+    "patch": {
+      "small": "https://imgur.com/BrW201S.png",
+      "large": "https://imgur.com/573IfGk.png"
+    },
+    "reddit": {
+      "campaign": "https://www.reddit.com/r/spacex/comments/jhu37i/starlink_general_discussion_and_deployment_thread/",
+      "launch": "https://www.reddit.com/r/spacex/comments/ncfexu/rspacex_starlink26_launch_discussion_updates/",
+      "media": null,
+      "recovery": "https://www.reddit.com/r/spacex/comments/k2ts1q/rspacex_fleet_updates_discussion_thread/"
+    },
+    "flickr": {
+      "small": [],
+      "original": []
+    },
+    "presskit": null,
+    "webcast": "https://youtu.be/tdgg_qwj-hI",
+    "youtube_id": "tdgg_qwj-hI",
+    "article": null,
+    "wikipedia": "https://en.wikipedia.org/wiki/Starlink"
+  },
+  "static_fire_date_utc": null,
+  "static_fire_date_unix": null,
+  "tbd": false,
+  "net": false,
+  "window": 0,
+  "rocket": "5e9d0d95eda69973a809d1ec",
+  "success": true,
+  "details": "This mission launches the 27th batch of operational Starlink satellites, which are version 1.0, from LC-39A or SLC-40. It is the 28th Starlink launch overall. The satellites will be delivered to low Earth orbit and will spend a few weeks maneuvering to their operational altitude. The booster is expected to land on an ASDS.",
+  "crew": [],
+  "ships": [
+    "5ea6ed30080df4000697c913",
+    "6059166413f40e27e8af34b6",
+    "608c1a06cf7f3d6152666ad4",
+    "5ea6ed2f080df4000697c90b"
+  ],
+  "capsules": [],
+  "payloads": [
+    "605b4bfcaa5433645e37d048",
+    "609f48374a12e4692eae4667",
+    "609f49c64a12e4692eae4668"
+  ],
+  "launchpad": "5e9e4502f509094188566f88",
+  "auto_update": true,
+  "launch_library_id": "c32d1f5e-2dd9-4b55-ac8b-3eb8c4a4e955",
+  "failures": [],
+  "flight_number": 127,
+  "name": "Starlink-26 (v1.0) + Capella-6 + Tyvak-0130",
+  "date_utc": "2021-05-15T22:54:00.000Z",
+  "date_unix": 1621119240,
+  "date_local": "2021-05-15T18:54:00-04:00",
+  "date_precision": "hour",
+  "upcoming": false,
+  "cores": [
+    {
+      "core": "5e9e28a7f3591817f23b2663",
+      "flight": 8,
+      "gridfins": true,
+      "legs": true,
+      "reused": true,
+      "landing_attempt": true,
+      "landing_success": true,
+      "landing_type": "ASDS",
+      "landpad": "5e9e3032383ecb6bb234e7ca"
+    }
+  ],
+  "id": "605b4b95aa5433645e37d041"
+}
