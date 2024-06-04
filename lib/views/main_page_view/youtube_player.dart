@@ -1,6 +1,6 @@
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
-import 'package:youtube_player_iframe/youtube_player_iframe.dart';
+import 'package:youtube_player_flutter/youtube_player_flutter.dart';
 
 Widget youtubePlayer(
   BuildContext context,
@@ -18,12 +18,12 @@ Widget youtubePlayer(
         Expanded(
           child: buildPlayer(
             url,
-            16/9,
+            16 / 9,
           ),
         ),
         buildVideoTitle(
           title,
-          Theme.of(context).textTheme.headline6!,
+          Theme.of(context).textTheme.headlineLarge!,
         ),
         nextPageButton,
       ],
@@ -39,11 +39,9 @@ AutoSizeText buildVideoTitle(String data, TextStyle textStyle) {
   );
 }
 
-YoutubePlayerIFrame buildPlayer(String url, double aspectRatio) {
-  return YoutubePlayerIFrame(
-    controller: YoutubePlayerController(
-      initialVideoId: url,
-    ),
+YoutubePlayer buildPlayer(String url, double aspectRatio) {
+  return YoutubePlayer(
+    controller: YoutubePlayerController(initialVideoId: url),
     aspectRatio: aspectRatio,
   );
 }

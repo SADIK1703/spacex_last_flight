@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 import '../utils/globals.dart';
@@ -20,24 +19,11 @@ class MainPageViewModels {
     'Info',
   ];
 
-  var buttonColor = <Color>[
-    Colors.red,
-    Colors.orange,
-    Colors.blue[900]!,
-    Colors.orange
-  ];
-  
-  var textColor = <Color>[
-    Colors.white,
-    Colors.white,
-    Colors.white,
-    Colors.white
-  ];
+  var buttonColor = <Color>[Colors.red, Colors.orange, Colors.blue[900]!, Colors.orange];
 
-  Widget buildPage(
-      {required context,
-      required int pageIndex,
-      required PageController pageController}) {
+  var textColor = <Color>[Colors.white, Colors.white, Colors.white, Colors.white];
+
+  Widget buildPage({required context, required int pageIndex, required PageController pageController}) {
     switch (pageIndex) {
       case 0:
         return mainInfoPage(
@@ -58,7 +44,7 @@ class MainPageViewModels {
         return webPage(
           buildPreviousPageButton(pageController, pageIndex),
           buildNextPageButton(pageController, pageIndex),
-          globalValues.lastFlight.links!.reddit!.campaign,
+          globalValues.lastFlight.links!.reddit!.launch,
         );
       case 3:
         return webPage(

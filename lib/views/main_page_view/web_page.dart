@@ -18,10 +18,11 @@ Widget webPage(
       children: [
         previousPageButton,
         Expanded(
-          child: WebView(
+          child: WebViewWidget(
             gestureRecognizers: gestureRecognizers,
-            allowsInlineMediaPlayback: true,
-            initialUrl: url,
+            controller: WebViewController.fromPlatformCreationParams(
+              PlatformWebViewControllerCreationParams(),
+            )..loadRequest(Uri.parse(url ?? '')),
           ),
         ),
         nextPageButton,

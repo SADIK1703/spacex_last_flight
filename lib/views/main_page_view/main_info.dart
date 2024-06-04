@@ -17,7 +17,7 @@ Widget mainInfoPage(
       previousPageButton,
       buildFlightName(
         globalValues.lastFlight.name,
-        Theme.of(context).textTheme.headline6!.copyWith(
+        Theme.of(context).textTheme.headlineLarge!.copyWith(
               fontWeight: FontWeight.bold,
             ),
       ),
@@ -28,12 +28,12 @@ Widget mainInfoPage(
             MediaQuery.of(context).size.width * 0.8,
             MediaQuery.of(context).size.height * 0.4,
           ),
-          Theme.of(context).textTheme.bodyText1!,
+          Theme.of(context).textTheme.bodySmall!,
         ),
       ),
       buildFlightDetails(
         globalValues.lastFlight.details,
-        Theme.of(context).textTheme.bodyText1!,
+        Theme.of(context).textTheme.bodySmall!,
       ),
       nextPageButton,
     ],

@@ -8,9 +8,7 @@ Widget PreviousPageButton(
   String data,
 ) {
   return ElevatedButton(
-    style: ElevatedButton.styleFrom(
-      primary: buttonColor,
-    ),
+    style: ElevatedButton.styleFrom(backgroundColor: buttonColor),
     onPressed: () {
       pageController.animateToPage(
         index,
@@ -35,9 +33,7 @@ Widget NextPageButton(
   String data,
 ) {
   return ElevatedButton(
-    style: ElevatedButton.styleFrom(
-      primary: buttonColor,
-    ),
+    style: ElevatedButton.styleFrom(backgroundColor: buttonColor),
     onPressed: () {
       pageController.animateToPage(
         index,
