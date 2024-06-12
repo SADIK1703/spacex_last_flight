@@ -38,9 +38,11 @@ Ensure you have the Flutter SDK installed. You can download it from [Flutter's o
 
 ### Installation
 
+BURAYI DUZELT
+
 1. **Clone the repository:**
    ```sh
-   git clone https://github.com/yourusername/spacex_launch_info_app.git
+   git clone https://https://github.com/SADIK1703/spacex_last_flight.git
    cd spacex_launch_info_app
    flutter pub get
    flutter run
