@@ -43,7 +43,7 @@ BURAYI DUZELT
 1. **Clone the repository:**
    ```sh
    git clone https://https://github.com/SADIK1703/spacex_last_flight.git
-   cd spacex_launch_info_app
+   cd spacex_last_flight
    flutter pub get
    flutter run
    ```
