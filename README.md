@@ -49,16 +49,16 @@ BURAYI DUZELT
    ```
 
 ## Directory Structure
-lib/
-├── main.dart
-├── services/
-│   └── request_service.dart
-├── views/
-│   ├── home_page.dart
-│   ├── youtube_video_page.dart
-│   └── webview_page.dart
-├── widgets/
-│   └── custom_app_bar.dart
+lib/ \n
+├── main.dart \n
+├── services/ \n
+│ └── request_service.dart  \n
+├── views/ \n
+│ ├── home_page.dart \n
+│ ├── youtube_video_page.dart \n
+│ └── webview_page.dart \n
+└── widgets/ \n
+└── custom_app_bar.dart \n
 
 ## Functionality
 
