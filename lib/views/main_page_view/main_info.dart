@@ -48,7 +48,7 @@ Widget buildFlightImage(String? url, Size size, TextStyle textStyle) {
           child: CachedNetworkImage(
             imageUrl: url,
             errorWidget: (context, url, error) => Icon(Icons.error),
-            placeholder: (context, url) => CircularProgressIndicator(),
+            placeholder: (context, url) => Center(child: CircularProgressIndicator()),
           ),
         )
       : Container(

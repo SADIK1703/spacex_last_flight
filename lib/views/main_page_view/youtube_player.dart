@@ -43,5 +43,6 @@ YoutubePlayer buildPlayer(String url, double aspectRatio) {
   return YoutubePlayer(
     controller: YoutubePlayerController(initialVideoId: url),
     aspectRatio: aspectRatio,
+    showVideoProgressIndicator: true,
   );
 }

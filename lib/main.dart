@@ -7,14 +7,7 @@ import 'views/custom_widgets/custom_appbar.dart';
 GlobalValues _globalValues = GlobalValues();
 LastFlightService _lastFlightService = LastFlightService();
 PageController _pageController = PageController();
-void main() async {
-  _globalValues.lastFlight = await _lastFlightService.getFlight().then(
-    (value) {
-      _globalValues.lastFlight = value;
-      return value;
-    },
-  );
-  print(_globalValues.lastFlight);
+void main() {
   runApp(MyApp());
 }
 
@@ -24,6 +17,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Flutter Demo',
       theme: ThemeData(
+        useMaterial3: false,
         primarySwatch: Colors.orange,
         secondaryHeaderColor: Colors.white,
         textTheme: TextTheme(
@@ -44,47 +38,79 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage> {
   late MainPageViewModels mainPageViewModels;
+  bool _isLoading = true;
+
   @override
   void initState() {
     super.initState();
-    mainPageViewModels = MainPageViewModels(
-      globalValues: _globalValues,
+    WidgetsBinding.instance.addPostFrameCallback(
+      (final _) async {
+        await _initializeData();
+      },
     );
+  }
+
+  Future<void> _initializeData() async {
+    _globalValues.lastFlight = await _lastFlightService.getFlight().then(
+      (value) {
+        _globalValues.lastFlight = value;
+        return value;
+      },
+    );
+    setState(() {
+      _isLoading = false;
+      mainPageViewModels = MainPageViewModels(
+        globalValues: _globalValues,
+      );
+    });
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: CustomAppBar(),
-      body: Padding(
-        padding: const EdgeInsets.all(8.0),
-        child: PageView(
-          allowImplicitScrolling: false,
-          scrollDirection: Axis.vertical,
-          controller: _pageController,
-          children: [
-            mainPageViewModels.buildPage(
-              context: context,
-              pageController: _pageController,
-              pageIndex: 0,
+      appBar: CustomAppBar(globalValues: _globalValues),
+      body: _isLoading
+          ? Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Center(child: CircularProgressIndicator()),
+              ],
+            )
+          : Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: PageView.builder(
+                allowImplicitScrolling: false,
+                scrollDirection: Axis.horizontal,
+                controller: _pageController,
+                itemBuilder: (_, index) => _buildPageWithTransition(index),
+              ),
             ),
-            mainPageViewModels.buildPage(
-              context: context,
-              pageIndex: 1,
-              pageController: _pageController,
-            ),
-            mainPageViewModels.buildPage(
-              context: context,
-              pageIndex: 2,
-              pageController: _pageController,
-            ),
-            mainPageViewModels.buildPage(
-              context: context,
-              pageIndex: 3,
-              pageController: _pageController,
-            ),
-          ],
-        ),
+    );
+  }
+
+  Widget _buildPageWithTransition(int pageIndex) {
+    return AnimatedBuilder(
+      animation: _pageController,
+      builder: (context, child) {
+        double value = 1.0;
+        if (_pageController.position.haveDimensions) {
+          value = _pageController.page! - pageIndex;
+          value = (1 - (value.abs() * 0.3)).clamp(0.0, 1.0);
+        }
+        return Transform(
+          transform: Matrix4.identity()..scale(value, value),
+          alignment: Alignment.center,
+          child: mainPageViewModels.buildPage(
+            context: context,
+            pageController: _pageController,
+            pageIndex: pageIndex,
+          ),
+        );
+      },
+      child: mainPageViewModels.buildPage(
+        context: context,
+        pageController: _pageController,
+        pageIndex: pageIndex,
       ),
     );
   }

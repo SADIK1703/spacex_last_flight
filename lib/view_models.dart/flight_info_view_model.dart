@@ -37,7 +37,7 @@ class MainPageViewModels {
           context,
           buildPreviousPageButton(pageController, pageIndex),
           buildNextPageButton(pageController, pageIndex),
-          globalValues.lastFlight.links!.webcast!.split('/').last,
+          globalValues.lastFlight.links?.youtubeId ?? '',
           globalValues.lastFlight.name ?? '',
         );
       case 2:

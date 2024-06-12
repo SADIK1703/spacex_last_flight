@@ -11,6 +11,7 @@ Widget webPage(
   final gestureRecognizers = {
     Factory(() => EagerGestureRecognizer()),
   };
+
   return Padding(
     padding: const EdgeInsets.all(8.0),
     child: Column(
