@@ -49,16 +49,27 @@ BURAYI DUZELT
    ```
 
 ## Directory Structure
-lib/ \
-├── main.dart \
-├── services/ \
-│ └── request_service.dart  \
-├── views/ \
-│ ├── home_page.dart \
-│ ├── youtube_video_page.dart \
-│ └── webview_page.dart \
-└── widgets/ \
-└── custom_app_bar.dart \
+📦lib \
+ ┣ 📂models \
+ ┃ ┗ 📜spacex_flight_model.dart \
+ ┣ 📂services \
+ ┃ ┗ 📜request_services.dart \
+ ┣ 📂utils \
+ ┃ ┣ 📜.request.rest \
+ ┃ ┣ 📜.response.http \
+ ┃ ┣ 📜constants.dart \
+ ┃ ┗ 📜globals.dart \
+ ┣ 📂views \
+ ┃ ┣ 📂custom_widgets \
+ ┃ ┃ ┗ 📜custom_appbar.dart \
+ ┃ ┗ 📂main_page_view \
+ ┃ ┃ ┣ 📜buttons.dart \
+ ┃ ┃ ┣ 📜main_info.dart \
+ ┃ ┃ ┣ 📜web_page.dart \
+ ┃ ┃ ┗ 📜youtube_player.dart \
+ ┣ 📂view_models.dart \
+ ┃ ┗ 📜flight_info_view_model.dart \
+ ┗ 📜main.dart \
 
 ## Functionality
 
